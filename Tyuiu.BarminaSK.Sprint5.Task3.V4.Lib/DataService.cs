@@ -7,7 +7,7 @@ namespace Tyuiu.BarminaSK.Sprint5.Task3.V4.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            double y = Math.Log((x + 1) / (x + 2));
+            double y = Math.Log((x + 1.0) / (x + 2.0));
             y = Math.Round(y, 3);
 
             string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask3.bin");
@@ -16,6 +16,7 @@ namespace Tyuiu.BarminaSK.Sprint5.Task3.V4.Lib
             {
                 writer.Write(y);
             }
+
             return path;
 
         }
