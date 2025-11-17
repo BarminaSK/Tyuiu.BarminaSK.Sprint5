@@ -6,7 +6,7 @@ namespace Tyuiu.BarminaSK.Sprint5.Task1.V10.Test
     public sealed class DataServiceTest
     {
         [TestMethod]
-        public void ValidGetMassFunction()
+        public void ValidCalculateFunction()
         {
             DataService ds = new DataService();
 
@@ -30,7 +30,7 @@ namespace Tyuiu.BarminaSK.Sprint5.Task1.V10.Test
             mass[10] = -21.43;
             double[] res;
             res = new double[length];
-            res = ds.GetMassFunction(startValue, stopValue);
+            res = ds.CalculateFunction(startValue, stopValue);
             CollectionAssert.AreEqual(mass, res);
 
         }
@@ -44,11 +44,9 @@ namespace Tyuiu.BarminaSK.Sprint5.Task1.V10.Test
 
             string path = ds.SaveToFileTextData(startValue, stopValue);
 
-            // Проверяем, что файл создан
             bool fileExists = File.Exists(path);
             Assert.AreEqual(true, fileExists);
 
-            // Проверяем, что файл не пустой
             string fileContent = File.ReadAllText(path);
             Assert.IsFalse(string.IsNullOrEmpty(fileContent));
         }

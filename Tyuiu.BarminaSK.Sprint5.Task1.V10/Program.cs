@@ -23,11 +23,11 @@ namespace Tyuiu.BarminaSK.Sprint5.Task1.V10
 
             Console.WriteLine($"Старт диапазона = {startValue}");
             Console.WriteLine($"Конец диапазона = {stopValue}");
-            int length = ds.GetMassFunction(startValue, stopValue).Length;
+            int length = ds.CalculateFunction(startValue, stopValue).Length;
 
             double[] mass;
             mass = new double[length];
-            mass = ds.GetMassFunction(startValue, stopValue);
+            mass = ds.CalculateFunction(startValue, stopValue);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
@@ -37,7 +37,7 @@ namespace Tyuiu.BarminaSK.Sprint5.Task1.V10
             Console.WriteLine("|    X     |    f(x)   |");
             Console.WriteLine("+----------+-----------+");
 
-            double[] result = ds.GetMassFunction(startValue, stopValue);
+            double[] result = ds.CalculateFunction(startValue, stopValue);
 
             for (int i = 0; i <= length - 1; i++)
             {
