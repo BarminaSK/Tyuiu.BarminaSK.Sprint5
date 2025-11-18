@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Globalization;
+using System.IO;
 using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.BarminaSK.Sprint5.Task4.V10.Lib
@@ -8,7 +9,7 @@ namespace Tyuiu.BarminaSK.Sprint5.Task4.V10.Lib
         public double LoadFromDataFile(string path)
         {
             string FileContent = File.ReadAllText(path);
-            double x = Convert.ToDouble(FileContent);
+            double x = double.Parse(FileContent, CultureInfo.InvariantCulture);
 
             double y = Math.Pow(x, 3) * 1.2 * x + 2;
             y = Math.Round(y, 3);
